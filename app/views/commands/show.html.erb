@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+  <p class="notice">Command created successfully</p>
+<% end %>
+
+
+<div class="phrase">
+	<%= @command.phrase %> 
+</div>
+
+<div class="actions">  
+<%= link_to "Edit", edit_command_path(@command) %> 
+<%#= link_to "Delete", video_path(@video), method: :delete %>
+</div>
+

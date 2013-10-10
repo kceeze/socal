@@ -40,12 +40,19 @@ gem 'libv8'
 gem "rmagick"
 gem "carrierwave"
 gem 'carrierwave-video'
-gem 'will_paginate', "3.0.3"
+gem "fog"
+#gem 'will_paginate', "3.0.3"
 gem 'devise'
 gem "cancan"
 gem "paper_trail", "2.6.3"
 gem 'recaptcha', "0.3.4", require: false
 gem "database_cleaner", "0.7.2"
+gem 'i18n-active_record', "0.0.2",
+    :git => 'git://github.com/svenfuchs/i18n-active_record.git',
+    #:git => 'git://github.com/SoftwareAllies/i18n-active_record.git',
+    :require => 'i18n/active_record'
+gem 'globalize3', "0.2.0", :git => 'git://github.com/gogogarrett/globalize3.git'
+gem 'kaminari'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

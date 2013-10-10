@@ -1,0 +1,53 @@
+.size_table
+{
+	width:75%;
+	margin-left: 50px;
+}
+
+.button_section
+{
+	margin-left: 50px; 
+}
+
+.paging_section
+{
+	margin-left: 50px; 
+}
+
+.song_section
+{
+	margin-left:300px;
+}
+.song_information
+{
+	margin-left:100px;
+}
+
+.song_player
+{
+	float:left;
+	width:20px;
+}
+
+.previous_song img
+{
+	float:left;
+	height:100px;
+	width:100px;
+	margin-top:90px;
+}
+
+
+.next_song img
+{
+	float:left;
+	height:100px;
+	width:100px;
+	margin-top:90px;
+}
+
+body
+{
+	background-image:url("/assets/background2.jpg");
+	background-color:#cccccc;
+}

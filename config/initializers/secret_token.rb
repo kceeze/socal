@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Socal::Application.config.secret_token = '90b7f97e13f1a9262973998b88f74fa8b531fab1f089b7b36d198daff5f58b015ad5d84b4985709a65f7068366cece443f3a80f1eb6155b6cbb4b926ab2ac026'
+Socal::Application.config.secret_token = '7577096c9af1be64e5218fbbe98cfcf01482c90408fbcc1a9d26e61b7857e4e03c119c2609975a80daeb9b8f28d0526f87b3eba5305edc69685ed8d6a1a69f6e'

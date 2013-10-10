@@ -1,0 +1,9 @@
+<%= initialize_sound_manager %>
+
+
+<%= form_for @command do |f| %> 
+	<div><%= f.label :phrase %> </div>
+	<div><%= f.text_area :phrase %></div>
+	<div id="play_command" class="btn btn-primary">Play Command</div>
+	<%= f.submit "Save", class: "btn btn-primary" %> 
+<% end %> 

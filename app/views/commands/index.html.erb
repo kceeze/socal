@@ -1,0 +1,21 @@
+<table class="table table-bordered table-striped size_table"> 
+<tr>
+<th><%= t "command" %></th><th> </th> <th> <%= t "edit" %></th>
+</tr> 
+<% @commands.each do |command| %> 
+	<tr id="command_<%= command.id %>" class="command_line">
+		<td><%= command.phrase %></td>
+		<td><div id="play_command" class="btn btn-primary">Play Command</div></td>
+		<td><%= link_to "Edit", edit_command_path(command) %></td>
+	</tr>
+<% end %> 
+
+</table>
+
+<div class="paging_section"> 
+	<%= paginate @commands %> 
+</div>
+
+<div class="button_section">
+<%= link_to "Add New Command", new_command_path, class: "btn btn-primary" %>
+</div>

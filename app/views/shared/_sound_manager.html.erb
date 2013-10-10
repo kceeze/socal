@@ -1,0 +1,25 @@
+<%= javascript_include_tag "soundmanager/script/soundmanager2.js" %>
+<script>
+
+soundManager.setup({
+  url: '/swf/',
+  // optional: use 100% HTML5 mode where available
+  // preferFlash: false,
+  onready: function() {
+    var mySound = soundManager.createSound({
+      id: 'aSound',
+      url: '<%= @command.phrase_to_api_sound %>'
+    });
+
+    $("#play_command").click(function(){
+		    mySound.play(); 
+	   });
+  },
+  ontimeout: function() {
+    // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+  }
+});
+
+
+
+</script>

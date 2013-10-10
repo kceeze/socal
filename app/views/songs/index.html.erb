@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag "flashblock", "page-player" %>
+<%= javascript_include_tag "soundmanager/script/soundmanager2", "soundmanager/script/page-player"  %>
+<script type="text/javascript">
+
+soundManager.setup({
+  url: '../../swf/'
+});
+
+function setTheme(sTheme) {
+  var o = document.getElementsByTagName('ul')[0];
+  o.className = 'playlist'+(sTheme?' '+sTheme:'');
+  return false;
+}
+</script>
+
+<style type="text/css">
+
+div#containerDiv{
+width:300px;
+height:50px;
+}
+
+.row1 {float:left; width:100px; height:25px;}
+.row2 {float:left; width:100px; height:25px;}
+</style>
+
+<ul class="playlist">
+	<% @songs.each do |song| %> 
+		 <li>
+		 	<a href="<%= song.audio_file %>"><%= song.artist %> - <%= song.title %></a>	
+		 </li> 
+		 <li>
+		 	<div id="containerDiv">
+		 		<div class="row1"><%= link_to "Show", song %></div> 
+		 		<div class="row2"><%= link_to "Edit", edit_song_path(song) %></div>
+		 	<div>
+		 <li>
+	<% end %> 
+</ul>
+
+<%= link_to "Add New Song", new_song_path %>

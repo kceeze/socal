@@ -1,0 +1,13 @@
+
+<%= form_for @song do |f| %> 
+	<div><%= f.label :artist %> </div>
+	<div><%= f.text_field :artist %></div>
+
+	<div><%= f.label :title %> </div>
+	<div><%= f.text_field :title %></div>
+
+	<div><%= f.label :upload_song %></div>
+	<div><%= f.file_field :audio_file %></div>
+
+	<%= f.submit "Save" %> 
+<% end %> 

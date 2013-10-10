@@ -1,0 +1,1 @@
+# FactoryGirl.define do # 	factory :user do # 		first_name: "Billy"# 		last_name: "Hawkins"# 		password: "anything"# 		password_confirmation: "anything"# 	end # end

@@ -35,9 +35,10 @@ group :assets do
   gem "therubyracer"
   gem 'less'
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
 end
 
+gem "sass-rails", '~> 3.2.3'
+gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 gem 'libv8'
 gem "rmagick"

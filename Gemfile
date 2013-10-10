@@ -38,7 +38,7 @@ group :assets do
 end
 
 gem "sass-rails", '~> 3.2.3'
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails", '2.2.6'
 gem 'jquery-rails'
 gem 'libv8'
 gem "rmagick"

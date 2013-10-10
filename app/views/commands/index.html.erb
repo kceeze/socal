@@ -2,12 +2,16 @@
 <tr>
 <th><%= t "command" %></th><th> </th> <th> <%= t "edit" %></th>
 </tr> 
-<% @commands.each do |command| %> 
-	<tr id="command_<%= command.id %>" class="command_line">
-		<td><%= command.phrase %></td>
-		<td><div id="play_command" class="btn btn-primary">Play Command</div></td>
-		<td><%= link_to "Edit", edit_command_path(command) %></td>
-	</tr>
+<% if @commands.present? %>
+	<% @commands.each do |command| %> 
+		<tr id="command_<%= command.id %>" class="command_line">
+			<td><%= command.phrase %></td>
+			<td><%= link_to "Edit", edit_command_path(command) %></td>
+			<td><div id="play_command" class="btn btn-primary">Play Command</div>
+		</tr>
+	<% end %> 
+<% else %> 
+	<tr><td>No commands found</td><td></td><td></td> <tr>
 <% end %> 
 
 </table>

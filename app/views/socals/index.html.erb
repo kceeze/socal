@@ -1,5 +1,9 @@
 <div> 
 	<h1><%= t "welcome" %></h1>
-     <li><%= link_to "Commands", commands_path %></li>
+    <li><h3><%= link_to "Commands", commands_path %></h3></li>
+     <li><h3><%= link_to "Songs", songs_path %></h3></li>
 
+     <% if @song.present? %> 
+     	<%= render "/songs/show" %>  
+     <% end %> 
 </div>

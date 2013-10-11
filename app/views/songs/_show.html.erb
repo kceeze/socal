@@ -1,0 +1,53 @@
+<%= javascript_include_tag "soundmanager/script/soundmanager2", "soundmanager/script/berniecode-animator", "soundmanager/script/360player"  %>
+<%= stylesheet_link_tag "flashblock", "360player", "360player-visualization" %>
+
+<div class="song_information">
+  <div><h1><%= @song.artist %></h1></div>
+  <div><h2><%= @song.title %></h2> </div>
+</div>
+
+<div class="song_section"> 
+  <div class="ui360 ui360-vis song_player">
+    <a href="<%= @song.audio_file %>"></a>
+  </div> 
+</div>
+
+<script type="text/javascript">
+
+soundManager.setup({
+  // path to directory containing SM2 SWF
+  url: '../../swf/'
+});
+
+threeSixtyPlayer.config.scaleFont = (navigator.userAgent.match(/msie/i)?false:true);
+threeSixtyPlayer.config.showHMSTime = true;
+
+// enable some spectrum stuffs
+
+threeSixtyPlayer.config.useWaveformData = true;
+threeSixtyPlayer.config.useEQData = true;
+
+// enable this in SM2 as well, as needed
+
+if (threeSixtyPlayer.config.useWaveformData) {
+  soundManager.flash9Options.useWaveformData = true;
+}
+if (threeSixtyPlayer.config.useEQData) {
+  soundManager.flash9Options.useEQData = true;
+}
+if (threeSixtyPlayer.config.usePeakData) {
+  soundManager.flash9Options.usePeakData = true;
+}
+
+if (threeSixtyPlayer.config.useWaveformData || threeSixtyPlayer.flash9Options.useEQData || threeSixtyPlayer.flash9Options.usePeakData) {
+  // even if HTML5 supports MP3, prefer flash so the visualization features can be used.
+  soundManager.preferFlash = true;
+}
+
+// favicon is expensive CPU-wise, but can be enabled.
+threeSixtyPlayer.config.useFavIcon = false;
+
+</script>
+
+
+

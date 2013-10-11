@@ -24,18 +24,20 @@ height:50px;
 .row2 {float:left; width:100px; height:25px;}
 </style>
 
-<ul class="playlist">
+<table class="table table-bordered table-striped size_table">
 	<% @songs.each do |song| %> 
-		 <li>
-		 	<a href="<%= song.audio_file %>"><%= song.artist %> - <%= song.title %></a>	
-		 </li> 
-		 <li>
-		 	<div id="containerDiv">
-		 		<div class="row1"><%= link_to "Show", song %></div> 
-		 		<div class="row2"><%= link_to "Edit", edit_song_path(song) %></div>
-		 	<div>
-		 <li>
+		 <tr>
+		 	<td><h3><%= song.artist %> - <%= song.title %><h3></td>
+		 	<td><%= link_to image_tag("/assets/playbutton.png"), song, class: "smaller_image" %></td> 
+		 	<td><%= link_to image_tag("/assets/editbutton.png"), edit_song_path(song), class: "smaller_image" %></td>
+		 </tr>
 	<% end %> 
-</ul>
+</table>
 
-<%= link_to "Add New Song", new_song_path %>
+<div class="paging_section"> 
+	<%= paginate @songs %> 
+</div>
+
+<div class="button_section">
+	<%= link_to "Add New Song", new_song_path, class: "btn btn-primary"%>
+</div>

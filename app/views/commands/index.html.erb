@@ -1,17 +1,16 @@
 <table class="table table-bordered table-striped size_table"> 
 <tr>
-<th><%= t "command" %></th><th> </th> <th> <%= t "edit" %></th>
+<th><%= t "command" %></th><th> Edit</th>
 </tr> 
 <% if @commands.present? %>
 	<% @commands.each do |command| %> 
 		<tr id="command_<%= command.id %>" class="command_line">
 			<td><%= command.phrase %></td>
-			<td><%= link_to "Edit", edit_command_path(command) %></td>
-			<td><div id="play_command" class="btn btn-primary">Play Command</div>
+			<td><%= link_to image_tag("/assets/editbutton.png"), edit_command_path(command), class: "smaller_image" %></td>
 		</tr>
 	<% end %> 
 <% else %> 
-	<tr><td>No commands found</td><td></td><td></td> <tr>
+	<tr><td>No commands found</td><td></td><tr>
 <% end %> 
 
 </table>

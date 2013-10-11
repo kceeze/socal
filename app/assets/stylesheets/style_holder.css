@@ -37,6 +37,12 @@
 	margin-top:90px;
 }
 
+.smaller_image img
+{
+	height:50px;
+	width:50px;
+}
+
 
 .next_song img
 {

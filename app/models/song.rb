@@ -15,7 +15,7 @@ class Song < ActiveRecord::Base
 	end
 
 	def next_song
-  		Song.limit(1).order("id DESC").where("id > ?", id).first
+  		Song.limit(1).order("id ASC").where("id > ?", id).first
 	end
    
 end
